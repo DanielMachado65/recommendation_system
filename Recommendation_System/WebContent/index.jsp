@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>IniciaÃ§Ã£o Cientifica</title>
+<title>Iniciação Cientifica</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -18,21 +18,21 @@
 <%
 	ArrayList<String> lista = new ArrayList<String>();
 
-	lista.add(" Uma estante de livros para que vocÃª consiga fazer a leitura dos mesmo de forma bem clara ");
-	lista.add(" Uma cadeira altamente confortÃ¡vel com o estampado em azul, perfeito para o momento de lazer");
+	lista.add(" Uma estante de livros para que você consiga fazer a leitura dos mesmo de forma bem clara ");
+	lista.add(" Uma cadeira altamente confortável com o estampado em azul, perfeito para o momento de lazer");
 	lista.add(
-			" A cadeira branca para ambientes externos, pode harmonizar perfeitamente para uma chicarÃ¡ de chÃ¡ ou um copo de suco");
+			" A cadeira branca para ambientes externos, pode harmonizar perfeitamente para uma chicará de chá ou um copo de suco");
 	lista.add(" A estante para a sala. Em tons de marrom e beje");
 	lista.add(" A cama beliche em tom de beje e marrom claro");
-	lista.add(" A estante em tom de marrom e preto, com madeira rÃºstica ");
-	lista.add(" A mesa branca com beje, tambÃ©m disponivel no tom preto com azul");
+	lista.add(" A estante em tom de marrom e preto, com madeira rústica ");
+	lista.add(" A mesa branca com beje, também disponivel no tom preto com azul");
 %>
 <body>
 	<header>
 		<div class="header">
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<a href=""><h1>AvaliaÃ§Ã£o de Notas</h1></a>
+					<a href=""><h1>Avaliação de Notas</h1></a>
 				</div>
 			</div>
 		</div>
@@ -41,9 +41,9 @@
 		<div class="row">
 			<div class="col-md-12">
 				<fieldset>
-					<legend>FormulÃ¡rio de cadastro de livros</legend>
+					<legend>Formulário de cadastro de livros</legend>
 					<form action="Processa" id="FormularioIndices" method="GET">
-
+						
 						<div class="list-group">
 							<%
 								for (int i = 0; i < 7; i++) {
@@ -51,7 +51,7 @@
 							<a
 								class="list-group-item list-group-item-action flex-column align-items-start">
 								<div class="d-flex w-100 justify-content-between">
-									<h5 class="mb-1"><%=(i + 1)%>Âº Movel
+									<h5 class="mb-1"><%=(i + 1)%>º Movel
 									</h5>
 								</div>
 								<div class="row">
@@ -73,12 +73,12 @@
 							<%
 								}
 							%>
-
+							
 							<button id="submitbtn1" class="btn btn-success " type="button"
 							name="button">Click Para Enviar</button>
 						</div>
 
-
+						
 
 						<div class="row" id="final" style="display: none">
 							<div class="col-md-12">
@@ -96,7 +96,7 @@
 											<div class="row" id="ResultadoFinalDiv">
 												<p>Por favor, insira o valor do ultimo carro. Para que a
 													gente possa tentar prever a sua nota, comparada com outros
-													usuÃ¡rios</p>
+													usuários</p>
 												<input id="showFinalResult" name="movel_7" type="value"
 													required class="form-control" placeholder="Insira um valor">
 											</div>
