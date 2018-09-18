@@ -1,5 +1,5 @@
-<%@page import="br.ufpr.dao.NotaDAO.GerenicObject"%>
-<%@page import="br.ufpr.dao.NotaDAO"%>
+<%@page import="br.ufpr.dao.UserPredictDAO.GerenicObject"%>
+<%@page import="br.ufpr.dao.UserPredictDAO"%>
 <%@page import="br.ufpr.entidade.Nota"%>
 <%@page import="java.util.List"%>
 
@@ -9,7 +9,7 @@
 <%
 	final String NomeSite = "Teste de Produçãos";
 	System.out.println("Recarregando da página");
-	NotaDAO notaDao = new NotaDAO();
+	UserPredictDAO notaDao = new UserPredictDAO();
 %>
 <html>
 <head>

@@ -49,7 +49,7 @@ $nextWeek = time() + (7 * 24 * 60 * 60);
                     </div>
                     <div class="row">
                       <div class="col-md-2">
-                        <img src="carros/<?php echo 'carro'.($i+1).'.jpg' ?>" class="img-fluid" alt="Responsive image">
+                        <img src="moveis/<?php echo 'moveis'.($i+1).'.jpg' ?>" class="img-fluid" alt="Responsive image">
                       </div>
                       <div class="col-md-10">
                         <div class="row">

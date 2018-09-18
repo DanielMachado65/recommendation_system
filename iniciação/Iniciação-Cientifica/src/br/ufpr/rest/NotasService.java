@@ -62,7 +62,7 @@ public class NotasService {
 	@Produces(MediaType.TEXT_PLAIN)
 	public String addNota(Nota nota) {
 		String msg = "";
-
+		
 		System.out.println(nota.getIdNota());
 
 		try {
