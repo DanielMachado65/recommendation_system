@@ -59,21 +59,13 @@ public class Processa extends HttpServlet {
 		String movel8 = "movel8";
 
 		mAllItems = new String[] { movel1, movel2, movel3, movel4, movel5, movel6, movel7, movel8 };
-		
-		
+
 		// carregando o banco de dados
 		try {
 			nomes = dao.getClientes();
-			for (String nome : nomes) {
+			for (String nome : nomes)
 				data.put(nome, dao.getAvaliacaoPorUsuario(nome));
-			}
-		} catch (Exception error) {
-			System.out.println(error);
-		}
-		
-		// inserindo no banco de dados para o usuário em especifico
-		
-		try {
+
 			int idCliente = dao.insertCliente(nomeUsuario);
 			dao.insertNota(Double.parseDouble(lista.get(0)), "movel1", idCliente);
 			dao.insertNota(Double.parseDouble(lista.get(1)), "movel2", idCliente);
@@ -84,19 +76,30 @@ public class Processa extends HttpServlet {
 			dao.insertNota(Double.parseDouble(lista.get(6)), "movel7", idCliente);
 			resultado = dao.getAvaliacaoPorUsuario(nomeUsuario);
 			data.put(nomeUsuario, resultado);
+
+			// fazendo um pré-processamento
+			SlopeOne so = new SlopeOne(data);
+			resultado = so.predict(resultado);
+			Double nota_final_usuario = resultado.get("movel8");
+			
+			// TODO: validação dos campos
+			if (nota_final_usuario > 5)
+				nota_final_usuario = 5.0;
+			if (nota_final_usuario < 0 )
+				nota_final_usuario = 0.0; 
+
+			dao.insertNota(nota_final_usuario, "movel8", idCliente);
+
+			System.out.println("Resultado da predição: " + resultado);
+			request.setAttribute("nota_final_algoritmo", String.valueOf(nota_final_usuario));
+			request.setAttribute("nota_final_usuario", lista.get(7));
+
+			// TODO: fazendo o redirecionamento 
+			request.getRequestDispatcher("WEB-INF/show.jsp").forward(request, response);
 		} catch (Exception error) {
 			System.out.println("Para o usuário em especifico foi feito o seguinte erro" + error);
 		}
 
-		// fazendo um pré-processamento
-		SlopeOne so = new SlopeOne(data);
-		resultado = so.predict(resultado);
-		System.out.println("Resultado da predição: " + resultado );
-		request.setAttribute("nota_final_algoritmo", String.valueOf(resultado.get("movel8")));
-		request.setAttribute("nota_final_usuario", lista.get(7));
-
-		// TODO: fazendo 
-		request.getRequestDispatcher("WEB-INF/show.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

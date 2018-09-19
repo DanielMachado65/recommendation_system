@@ -18,8 +18,8 @@
 <%
 	ArrayList<String> lista = new ArrayList<String>();
 
-	lista.add(" Uma estante de livros para que você consiga fazer a leitura dos mesmo de forma bem clara ");
-	lista.add(" Uma cadeira altamente confortável com o estampado em azul, perfeito para o momento de lazer");
+	lista.add(" Uma estante de livros com formato moderno ");
+	lista.add(" Uma cadeira altamente confortavel com o estampado em azul, perfeito para o momento de lazer");
 	lista.add(
 			" A cadeira branca para ambientes externos, pode harmonizar perfeitamente para uma chicará de chá ou um copo de suco");
 	lista.add(" A estante para a sala. Em tons de marrom e beje");
@@ -39,11 +39,24 @@
 	</header>
 	<div class="container">
 		<div class="row">
+			<blockquote class="blockquote">
+				<p class="mb-0" style="margin-top: 10%; box-shadow: 1px -2px 2px 0px gainsboro;">
+					Projeto que implementa o algoritmo <em>Slope One</em> para uma
+					aplicação com JavaWeb. Basicamente ele tentará prever a nota
+					inserida. Logo insira uma nota de 1 a 5 para poder começar a
+					avaliação
+				</p>
+				<footer class="blockquote-footer">
+					Implementação por: <cite title="author">Daniel Machado
+						Pintos</cite>
+				</footer>
+			</blockquote>
+		</div>
+		<div class="row">
 			<div class="col-md-12">
 				<fieldset>
-					<legend>Formulário de cadastro de livros</legend>
 					<form action="Processa" id="FormularioIndices" method="POST">
-						
+
 						<div class="list-group">
 							<%
 								for (int i = 0; i < 7; i++) {
@@ -64,8 +77,8 @@
 											<p>
 												<%=lista.get(i)%>
 											</p>
-											<input type="value" name="movel_<%=i%>" class="form-control"
-												placeholder="Insira um valor">
+											<input required type="value" name="movel_<%=i%>"
+												class="form-control" placeholder="Insira um valor">
 										</div>
 									</div>
 								</div>
@@ -73,12 +86,12 @@
 							<%
 								}
 							%>
-							
+
 							<button id="submitbtn1" class="btn btn-success " type="button"
-							name="button">Click Para Enviar</button>
+								name="button">Click Para Enviar</button>
 						</div>
 
-						
+
 
 						<div class="row" id="final" style="display: none">
 							<div class="col-md-12">
@@ -94,7 +107,7 @@
 										</div>
 										<div class="col-md-10">
 											<div class="row" id="ResultadoFinalDiv">
-												<p>Por favor, insira o valor do ultimo carro. Para que a
+												<p>Por favor, insira o valor do ultimo móvel. Para que a
 													gente possa tentar prever a sua nota, comparada com outros
 													usuários</p>
 												<input id="showFinalResult" name="movel_7" type="value"
@@ -104,9 +117,10 @@
 									</div>
 									<hr>
 									<div class="row">
-									<input class="form-control" type="text" name="nomeUsuario" required placeholder="Insira o seu nome">
-										<input type="submit" class="btn btn-success"
-											name="submitButton" value="Click Para Enviar">
+										<input class="form-control" type="text" name="nomeUsuario"
+											required placeholder="Insira o seu nome"> <input
+											type="submit" class="btn btn-success" name="submitButton"
+											value="Click Para Enviar">
 									</div>
 								</a>
 							</div>
