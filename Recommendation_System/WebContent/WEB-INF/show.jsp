@@ -39,7 +39,7 @@
 
 			<div class="col-md-5">
 				<p class="wrapper_final">
-					O valor que foi previsto pelo algoritmo
+					O valor que foi previsto pelo algoritmo: 
 					<%=nota_algoritmo%>
 				</p>
 			</div>

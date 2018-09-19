@@ -42,7 +42,7 @@
 			<div class="col-md-12">
 				<fieldset>
 					<legend>Formulário de cadastro de livros</legend>
-					<form action="Processa" id="FormularioIndices" method="GET">
+					<form action="Processa" id="FormularioIndices" method="POST">
 						
 						<div class="list-group">
 							<%
@@ -104,7 +104,7 @@
 									</div>
 									<hr>
 									<div class="row">
-									<input class="form-control" type="text" name="nomeUsuario" placeholder="Insira o seu nome">
+									<input class="form-control" type="text" name="nomeUsuario" required placeholder="Insira o seu nome">
 										<input type="submit" class="btn btn-success"
 											name="submitButton" value="Click Para Enviar">
 									</div>

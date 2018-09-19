@@ -91,13 +91,11 @@ public class Processa extends HttpServlet {
 		// fazendo um pré-processamento
 		SlopeOne so = new SlopeOne(data);
 		resultado = so.predict(resultado);
-		System.out.println(resultado);
-		response.getWriter().append(lista.toString());
-		request.setAttribute("lista", lista);
-
-		request.setAttribute("nota_final_algoritmo", "3");
+		System.out.println("Resultado da predição: " + resultado );
+		request.setAttribute("nota_final_algoritmo", String.valueOf(resultado.get("movel8")));
 		request.setAttribute("nota_final_usuario", lista.get(7));
 
+		// TODO: fazendo 
 		request.getRequestDispatcher("WEB-INF/show.jsp").forward(request, response);
 	}
 
